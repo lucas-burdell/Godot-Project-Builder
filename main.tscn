@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://v8hhfjgxiu7r"]
+
+[ext_resource type="Script" uid="uid://n1girg6r03ml" path="res://containers/wizard_container.gd" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://fc84jdgw15xo" path="res://containers/basics_container.tscn" id="2_1bvp3"]
+[ext_resource type="Script" uid="uid://byc54r662gcgr" path="res://containers/final_container.gd" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://c73aaq46thrt2" path="res://containers/controller_container.tscn" id="3_lquwl"]
+
+[node name="Main" type="Control" unique_id=816965089]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=634554616]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="WizardContainer" type="VBoxContainer" parent="ScrollContainer" unique_id=2084419843 node_paths=PackedStringArray("containers")]
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("1_ig7tw")
+containers = [NodePath("BasicsContainer"), NodePath("ControllerContainer"), NodePath("FinalContainer")]
+
+[node name="BasicsContainer" parent="ScrollContainer/WizardContainer" unique_id=1297249567 instance=ExtResource("2_1bvp3")]
+layout_mode = 2
+
+[node name="ControllerContainer" parent="ScrollContainer/WizardContainer" unique_id=1460934037 instance=ExtResource("3_lquwl")]
+layout_mode = 2
+
+[node name="FinalContainer" type="PanelContainer" parent="ScrollContainer/WizardContainer" unique_id=102850642]
+layout_mode = 2
+script = ExtResource("3_h2yge")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/WizardContainer/FinalContainer" unique_id=588886598]
+layout_mode = 2
+
+[node name="CreateButton" type="Button" parent="ScrollContainer/WizardContainer/FinalContainer/VBoxContainer" unique_id=760227197]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+disabled = true
+text = "Create"
