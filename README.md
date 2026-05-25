@@ -4,6 +4,8 @@ A tool to scaffold, organize, and manage Godot Engine projects with ease.
 
 Godot Project Maker is a utility meant as a quick way to scaffold a new Godot project. It started as a way to help me with my one-project-a-month habit. 
 
+![Project Screenshot](screenshot.png)
+
 ## Prerequisites
 - [GDVM](https://github.com/adalinesimonian/gdvm) for version management
 

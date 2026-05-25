@@ -40,7 +40,7 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 2
 size_flags_horizontal = 3
 script = ExtResource("1_ig7tw")
-containers = [NodePath("BasicsContainer"), NodePath("ControllerContainer"), NodePath("StructureContainer"), null]
+containers = [NodePath("BasicsContainer"), NodePath("ControllerContainer"), NodePath("StructureContainer"), NodePath("FinalContainer")]
 
 [node name="BasicsContainer" parent="MarginContainer/ScrollContainer/WizardContainer" unique_id=1297249567 instance=ExtResource("2_1bvp3")]
 layout_mode = 2

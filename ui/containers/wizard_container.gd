@@ -35,6 +35,9 @@ func _handle_next(current_index: int, next_index: int) -> void:
 func _update_data_bag_from_container(container: WizardPanelBase) -> void:
 	var data_to_merge := container.get_data()
 	data_bag.merge(data_to_merge, true)
+	for i in range(containers.size()):
+		if containers[i].has_method("update_from_bag"):
+			containers[i].update_from_bag(data_bag)
 
 func _animate_open(container: Control) -> void:
 	container.visible = true

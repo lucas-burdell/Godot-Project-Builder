@@ -14,3 +14,6 @@ func is_valid_data() -> bool:
 func get_data() -> Dictionary[String, Variant]:
 	assert(false, "This method must be implemented by the child class.")
 	return {}
+
+func update_from_bag(bag: Dictionary[String, Variant]) -> void:
+	pass
