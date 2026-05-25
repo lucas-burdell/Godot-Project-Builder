@@ -2,3 +2,5 @@
 .godot/
 /android/
 /folder_tests/*
+.vscode/
+builds/*
