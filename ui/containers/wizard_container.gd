@@ -18,12 +18,17 @@ func _setup_containers() -> void:
 			child.connect("next", func() -> void:
 				_handle_next(i, i + 1)
 			)
+		if child.has_signal("update_data"):
+			child.connect("update_data", func() -> void:
+				_update_data_bag_from_container(child)
+			)
 
 func _handle_next(current_index: int, next_index: int) -> void:
 	if not containers[current_index].is_valid_data():
 		return
 	_update_data_bag_from_container(containers[current_index])
 	if (next_index) >= containers.size():
+		_create()
 		return
 	_animate_open(containers[next_index])
 
@@ -33,3 +38,8 @@ func _update_data_bag_from_container(container: WizardPanelBase) -> void:
 
 func _animate_open(container: Control) -> void:
 	container.visible = true
+
+func _create() -> void:
+	var builder := ProjectBuilder.new(data_bag)
+	builder.create()
+	PopupHandler.show_success("Project created successfully!")

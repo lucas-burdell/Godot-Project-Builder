@@ -1,0 +1,104 @@
+[gd_scene format=3 uid="uid://fc84jdgw15xo"]
+
+[ext_resource type="Script" uid="uid://c26cocwxrhghp" path="res://ui/containers/basics_container.gd" id="1_engii"]
+[ext_resource type="Texture2D" uid="uid://bmoxt2qmhgnlp" path="res://assets/Folder.svg" id="2_skq0d"]
+
+[sub_resource type="FontVariation" id="FontVariation_skq0d"]
+variation_embolden = 0.5
+
+[sub_resource type="LabelSettings" id="LabelSettings_w7gu0"]
+font = SubResource("FontVariation_skq0d")
+font_size = 32
+
+[node name="BasicsContainer" type="PanelContainer" unique_id=1297249567]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_engii")
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=415971459]
+layout_mode = 2
+theme_override_constants/margin_top = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=2051580819]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer" unique_id=995086470]
+layout_mode = 2
+text = "Basics"
+label_settings = SubResource("LabelSettings_w7gu0")
+
+[node name="ProjectNameContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1197174166]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/ProjectNameContainer" unique_id=2095791463]
+layout_mode = 2
+text = "Project Name"
+
+[node name="NameEdit" type="LineEdit" parent="MarginContainer/VBoxContainer/ProjectNameContainer" unique_id=1210439760]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Project Name"
+
+[node name="GodotVersionContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1907839584]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/GodotVersionContainer" unique_id=435949161]
+layout_mode = 2
+text = "Godot Version"
+
+[node name="GodotVersionOption" type="OptionButton" parent="MarginContainer/VBoxContainer/GodotVersionContainer" unique_id=1707023352]
+unique_name_in_owner = true
+layout_mode = 2
+allow_reselect = true
+
+[node name="LocationContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1530788059]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/LocationContainer" unique_id=380366180]
+layout_mode = 2
+text = "Location"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/LocationContainer" unique_id=969399399]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ProjectLocationEdit" type="LineEdit" parent="MarginContainer/VBoxContainer/LocationContainer/HBoxContainer" unique_id=2008924804]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Location..."
+editable = false
+
+[node name="ProjectLocationButton" type="Button" parent="MarginContainer/VBoxContainer/LocationContainer/HBoxContainer" unique_id=1018973837]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Browse"
+icon = ExtResource("2_skq0d")
+
+[node name="ProjectLocationFileDialog" type="FileDialog" parent="MarginContainer/VBoxContainer/LocationContainer" unique_id=335505778]
+unique_name_in_owner = true
+oversampling_override = 1.0
+title = "Open a Directory"
+file_mode = 2
+display_mode = 1
+access = 2
+use_native_dialog = true
+
+[node name="CSharpCheckbox" type="CheckButton" parent="MarginContainer/VBoxContainer" unique_id=356755763]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Include CSharp?"
+flat = true
+
+[node name="NextButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=682238103]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+disabled = true
+text = "Next"

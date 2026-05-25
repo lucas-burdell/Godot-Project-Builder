@@ -3,9 +3,12 @@
 [ext_resource type="PackedScene" uid="uid://cwfeblhhxhlqn" path="res://controller_samples/2D/sidescroller/player.tscn" id="1_kvy31"]
 [ext_resource type="Script" uid="uid://b3mwnbomnl0ll" path="res://controller_samples/2D/sidescroller/tests/player_debug.gd" id="2_k60nf"]
 
+[sub_resource type="Environment" id="Environment_k60nf"]
+ambient_light_source = 1
+
 [sub_resource type="Gradient" id="Gradient_xah26"]
 offsets = PackedFloat32Array(0)
-colors = PackedColorArray(0, 0, 0, 1)
+colors = PackedColorArray(0.6255971, 0.6255971, 0.62559694, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_2x8lt"]
 gradient = SubResource("Gradient_xah26")
@@ -18,6 +21,24 @@ fill_from = Vector2(0.5, 0)
 size = Vector2(500, 16)
 
 [node name="Test" type="Node2D" unique_id=1124979967]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1254999379]
+environment = SubResource("Environment_k60nf")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1748386153]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1119538730]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=2053427266]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Label" type="Label" parent="CanvasLayer/Control" unique_id=373864622 node_paths=PackedStringArray("player")]
+layout_mode = 0
+offset_right = 30.0
+offset_bottom = 23.0
+script = ExtResource("2_k60nf")
+player = NodePath("../../../Player")
 
 [node name="Player" parent="." unique_id=1828888278 instance=ExtResource("1_kvy31")]
 
@@ -110,15 +131,14 @@ metadata/_edit_group_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D3/StaticBody2D" unique_id=219458259]
 shape = SubResource("RectangleShape2D_xah26")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1119538730]
+[node name="Sprite2D4" type="Sprite2D" parent="." unique_id=523597983]
+position = Vector2(470, -54)
+rotation = -1.5707964
+scale = Vector2(0.34306532, 1)
+texture = SubResource("GradientTexture2D_2x8lt")
+metadata/_edit_group_ = true
 
-[node name="Control" type="Control" parent="CanvasLayer" unique_id=2053427266]
-layout_mode = 3
-anchors_preset = 0
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D4" unique_id=972336762]
 
-[node name="Label" type="Label" parent="CanvasLayer/Control" unique_id=373864622 node_paths=PackedStringArray("player")]
-layout_mode = 0
-offset_right = 30.0
-offset_bottom = 23.0
-script = ExtResource("2_k60nf")
-player = NodePath("../../../Player")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D4/StaticBody2D" unique_id=1194444720]
+shape = SubResource("RectangleShape2D_xah26")

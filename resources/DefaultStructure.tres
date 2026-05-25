@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="StructureDefinition" format=3 uid="uid://dugtxv28i71cu"]
+
+[ext_resource type="Script" uid="uid://bbimdb15jnc7j" path="res://scripts/resources/StructureDefinition.gd" id="1_o2wj1"]
+
+[resource]
+script = ExtResource("1_o2wj1")
+structure_name = "Default"
+structure = Dictionary[String, Dictionary]({
+"actors": {},
+"assets": {
+"audio": {},
+"models": {},
+"textures": {}
+},
+"docs": {},
+"globals": {},
+"levels": {},
+"raw": {
+"models": {},
+"textures": {}
+},
+"scripts": {
+"interfaces": {},
+"resources": {},
+"utilities": {}
+},
+"ui": {}
+})
+controller_location = "actors"
+metadata/_custom_type_script = "uid://bbimdb15jnc7j"

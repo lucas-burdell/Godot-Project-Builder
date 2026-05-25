@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="StructureDefinition" format=3 uid="uid://dh30wmy8pflwr"]
+
+[ext_resource type="Script" uid="uid://bbimdb15jnc7j" path="res://scripts/resources/StructureDefinition.gd" id="1_ksrxn"]
+
+[resource]
+script = ExtResource("1_ksrxn")
+structure_name = "Insaneism"
+structure = Dictionary[String, Dictionary]({
+"assets": {
+"audio": {},
+"maps": {},
+"textures": {},
+"tilesets": {}
+},
+"docs": {},
+"resources": {},
+"scenes": {
+"entities": {},
+"maps": {},
+"structures": {},
+"ui": {},
+"vfx": {}
+},
+"src": {
+"Client": {},
+"Gameplay": {},
+"Models": {},
+"Server": {},
+"Shared": {}
+},
+"tools": {}
+})
+controller_location = "scenes/entities"
+metadata/_custom_type_script = "uid://bbimdb15jnc7j"

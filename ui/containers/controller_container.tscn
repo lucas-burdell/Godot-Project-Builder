@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://c73aaq46thrt2"]
+
+[ext_resource type="Script" uid="uid://cysrytrn67w0j" path="res://ui/containers/controller_container.gd" id="1_hrkh5"]
+[ext_resource type="Theme" uid="uid://dk54yjvrtv32h" path="res://resources/theme.tres" id="2_6870x"]
+
+[sub_resource type="FontVariation" id="FontVariation_6870x"]
+variation_embolden = 0.5
+
+[sub_resource type="LabelSettings" id="LabelSettings_6870x"]
+font = SubResource("FontVariation_6870x")
+font_size = 32
+
+[node name="ControllerContainer" type="PanelContainer" unique_id=1460934037]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hrkh5")
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=933551450]
+layout_mode = 2
+theme_override_constants/margin_top = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=490105253]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer" unique_id=2088145120]
+layout_mode = 2
+text = "Controller"
+label_settings = SubResource("LabelSettings_6870x")
+
+[node name="GodotVersionContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=663326609]
+layout_mode = 2
+theme = ExtResource("2_6870x")
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/GodotVersionContainer" unique_id=2018267600]
+layout_mode = 2
+text = "Controller"
+
+[node name="ControllerOption" type="OptionButton" parent="MarginContainer/VBoxContainer/GodotVersionContainer" unique_id=913815199]
+unique_name_in_owner = true
+layout_mode = 2
+allow_reselect = true
+
+[node name="NextButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=676774599]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+disabled = true
+text = "Next"

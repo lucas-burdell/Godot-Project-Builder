@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://bkk7elmxhywga"]
+
+[ext_resource type="Script" uid="uid://dkjoh1nxrb8tc" path="res://ui/containers/structure_container.gd" id="1_xvcqo"]
+[ext_resource type="Texture2D" uid="uid://bmoxt2qmhgnlp" path="res://assets/Folder.svg" id="2_v0pqx"]
+[ext_resource type="Script" uid="uid://bbimdb15jnc7j" path="res://scripts/resources/StructureDefinition.gd" id="3_avekh"]
+[ext_resource type="Resource" uid="uid://dugtxv28i71cu" path="res://resources/DefaultStructure.tres" id="4_8wv37"]
+[ext_resource type="Resource" uid="uid://dh30wmy8pflwr" path="res://resources/InsaneismStructure.tres" id="5_dodld"]
+
+[sub_resource type="FontVariation" id="FontVariation_skq0d"]
+variation_embolden = 0.5
+
+[sub_resource type="LabelSettings" id="LabelSettings_8wv37"]
+font = SubResource("FontVariation_skq0d")
+font_size = 32
+
+[node name="StructureContainer" type="PanelContainer" unique_id=1112327748]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xvcqo")
+folder_icon = ExtResource("2_v0pqx")
+structures = Array[ExtResource("3_avekh")]([ExtResource("4_8wv37"), ExtResource("5_dodld")])
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1902944493]
+layout_mode = 2
+theme_override_constants/margin_top = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=578001841]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer" unique_id=385447374]
+layout_mode = 2
+text = "Folder Structure"
+label_settings = SubResource("LabelSettings_8wv37")
+
+[node name="GodotVersionContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=2138073973]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/GodotVersionContainer" unique_id=861900308]
+layout_mode = 2
+text = "Folder Structure"
+
+[node name="StructureOption" type="OptionButton" parent="MarginContainer/VBoxContainer/GodotVersionContainer" unique_id=318289918]
+unique_name_in_owner = true
+layout_mode = 2
+tooltip_text = "Select the initial folder structure for the project."
+allow_reselect = true
+
+[node name="Tree" type="Tree" parent="MarginContainer/VBoxContainer" unique_id=641852924]
+unique_name_in_owner = true
+clip_contents = false
+layout_mode = 2
+size_flags_vertical = 3
+theme_type_variation = &"Tree_NoSelect"
+allow_search = false
+enable_drag_unfolding = false
+hide_root = true
+auto_tooltip = false
+scroll_vertical_enabled = false
+
+[node name="NextButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1460531992]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Next"

@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://dndlddd0bisnf"]
+
+[ext_resource type="PackedScene" uid="uid://5c2kbj41r4s0" path="res://controller_samples/3D/firstperson/player.tscn" id="1_qroum"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qroum"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_7hbx6"]
+sky_material = SubResource("ProceduralSkyMaterial_qroum")
+
+[sub_resource type="Environment" id="Environment_13ncf"]
+background_mode = 2
+sky = SubResource("Sky_7hbx6")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qroum"]
+albedo_color = Color(0.24477637, 0.2447764, 0.24477637, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_7hbx6"]
+material = SubResource("StandardMaterial3D_qroum")
+size = Vector2(50, 50)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_qroum"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_qroum"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7hbx6"]
+
+[node name="Test1" type="Node3D" unique_id=142925588]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=960988821]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=364566394]
+environment = SubResource("Environment_13ncf")
+
+[node name="Player" parent="." unique_id=473652617 instance=ExtResource("1_qroum")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=492735824]
+mesh = SubResource("PlaneMesh_7hbx6")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=1057063901]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=1588022935]
+shape = SubResource("WorldBoundaryShape3D_qroum")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=162275040]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21105003, 0.5, -8.598859)
+mesh = SubResource("BoxMesh_qroum")
+metadata/_edit_group_ = true
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D2" unique_id=157492253]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/StaticBody3D" unique_id=944865792]
+shape = SubResource("BoxShape3D_7hbx6")

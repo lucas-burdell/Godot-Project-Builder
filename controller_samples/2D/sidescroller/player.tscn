@@ -28,28 +28,23 @@ advance_expression = "is_falling"
 advance_mode = 2
 advance_expression = "!is_falling"
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_pqf2e"]
+advance_mode = 2
+advance_expression = "!is_falling and !is_jumping"
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_fkq7n"]
 states/End/position = Vector2(1043, 46)
 states/jump/node = SubResource("AnimationNodeAnimation_80tdc")
 states/jump/position = Vector2(417, 55)
 states/jump_idle/node = SubResource("AnimationNodeAnimation_pqf2e")
-states/jump_idle/position = Vector2(605, 4)
+states/jump_idle/position = Vector2(573, -86)
 states/jump_land/node = SubResource("AnimationNodeAnimation_4yt8v")
 states/jump_land/position = Vector2(772, -9)
-transitions = ["jump_land", "End", SubResource("AnimationNodeStateMachineTransition_dk622"), "Start", "jump", SubResource("AnimationNodeStateMachineTransition_m5der"), "jump", "jump_idle", SubResource("AnimationNodeStateMachineTransition_wywtt"), "jump_idle", "jump_land", SubResource("AnimationNodeStateMachineTransition_witbo")]
-graph_offset = Vector2(-175, -87)
+transitions = ["jump_land", "End", SubResource("AnimationNodeStateMachineTransition_dk622"), "Start", "jump", SubResource("AnimationNodeStateMachineTransition_m5der"), "jump", "jump_idle", SubResource("AnimationNodeStateMachineTransition_wywtt"), "jump_idle", "jump_land", SubResource("AnimationNodeStateMachineTransition_witbo"), "jump", "jump_land", SubResource("AnimationNodeStateMachineTransition_pqf2e")]
+graph_offset = Vector2(-175, -164)
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_mif2l"]
 animation = &"idle"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_gyqnr"]
-animation = &"jump"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1nyu8"]
-animation = &"jump_idle"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_pir0e"]
-animation = &"jump_land"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_p0bxr"]
 animation = &"walk"
@@ -65,65 +60,35 @@ advance_expression = "is_walking"
 advance_mode = 2
 advance_expression = "!is_walking"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_80tdc"]
-advance_mode = 2
-advance_expression = "is_falling"
-
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_gyqnr"]
+priority = 0
 advance_mode = 2
-advance_expression = "!is_falling"
+advance_expression = "is_jumping or is_falling"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1nyu8"]
 switch_mode = 2
 advance_mode = 2
-advance_expression = "!is_walking"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_pir0e"]
-advance_mode = 2
-advance_expression = "is_jumping"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_pqf2e"]
-advance_mode = 2
-advance_expression = "is_falling"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_mif2l"]
-advance_mode = 2
-advance_expression = "!is_falling && !is_jumping"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_p0bxr"]
-priority = 0
-advance_mode = 2
-advance_expression = "is_jumping"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_p0b4t"]
 switch_mode = 2
 advance_mode = 2
 advance_expression = "is_walking"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_v4sj6"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_80tdc"]
 priority = 0
 advance_mode = 2
-advance_expression = "is_falling"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ivncu"]
-advance_mode = 2
-advance_expression = "is_jumping"
+advance_expression = "is_jumping or is_falling"
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_ivncu"]
 states/Jump_SM/node = SubResource("AnimationNodeStateMachine_fkq7n")
-states/Jump_SM/position = Vector2(647, -264)
+states/Jump_SM/position = Vector2(472, -80)
+states/Start/position = Vector2(197, 100)
 states/idle/node = SubResource("AnimationNodeAnimation_mif2l")
 states/idle/position = Vector2(357, 92)
-states/jump/node = SubResource("AnimationNodeAnimation_gyqnr")
-states/jump/position = Vector2(706, -88)
-states/jump_idle/node = SubResource("AnimationNodeAnimation_1nyu8")
-states/jump_idle/position = Vector2(333, -143)
-states/jump_land/node = SubResource("AnimationNodeAnimation_pir0e")
-states/jump_land/position = Vector2(469, -60)
 states/walk/node = SubResource("AnimationNodeAnimation_p0bxr")
 states/walk/position = Vector2(621, 100)
-transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_4fv84"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_uh877"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_4yt8v"), "idle", "jump_idle", SubResource("AnimationNodeStateMachineTransition_80tdc"), "jump_idle", "jump_land", SubResource("AnimationNodeStateMachineTransition_gyqnr"), "jump_land", "idle", SubResource("AnimationNodeStateMachineTransition_1nyu8"), "idle", "jump", SubResource("AnimationNodeStateMachineTransition_pir0e"), "jump", "jump_idle", SubResource("AnimationNodeStateMachineTransition_pqf2e"), "jump", "jump_land", SubResource("AnimationNodeStateMachineTransition_mif2l"), "walk", "jump", SubResource("AnimationNodeStateMachineTransition_p0bxr"), "jump_land", "walk", SubResource("AnimationNodeStateMachineTransition_p0b4t"), "walk", "jump_idle", SubResource("AnimationNodeStateMachineTransition_v4sj6"), "jump_land", "jump", SubResource("AnimationNodeStateMachineTransition_ivncu")]
-graph_offset = Vector2(-216, -207)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_4fv84"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_uh877"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_4yt8v"), "walk", "Jump_SM", SubResource("AnimationNodeStateMachineTransition_gyqnr"), "Jump_SM", "idle", SubResource("AnimationNodeStateMachineTransition_1nyu8"), "Jump_SM", "walk", SubResource("AnimationNodeStateMachineTransition_pir0e"), "idle", "Jump_SM", SubResource("AnimationNodeStateMachineTransition_80tdc")]
+graph_offset = Vector2(-168, -156)
 
 [sub_resource type="Animation" id="Animation_80tdc"]
 length = 0.001
