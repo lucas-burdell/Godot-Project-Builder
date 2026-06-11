@@ -7,7 +7,6 @@ extends WizardPanelBase
 
 var controllers: Dictionary[String, String] = {}
 
-
 func _ready() -> void:
 	# get controllers
 	var controllers_dir := DirAccess.open(controller_samples)

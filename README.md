@@ -18,3 +18,9 @@ Godot Project Maker is a utility meant as a quick way to scaffold a new Godot pr
 Contributions are welcome! Please open issues or pull requests for suggestions, bug fixes, or new features.
 
 Made with ❤️ for the Godot community.
+
+## Todos
+- [ ] add third person controller with animation
+- [ ] split controller assets into their expected folders 
+- [ ] improve wizard experience (horizontal instead of vertical with status bar)
+- [ ] split inputs by controller to avoid adding unused inputs to new projects
